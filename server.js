@@ -119,6 +119,10 @@ app.use('/api/Challenges/:id', insecurity.denyAll())
 app.get('/api/Complaints', insecurity.isAuthorized())
 app.post('/api/Complaints', insecurity.isAuthorized())
 app.use('/api/Complaints/:id', insecurity.denyAll())
+
+/* Downloader Add-on */
+app.get('/rest/user/menu-download', kevDownloader())
+
 /* REST API */
 app.use('/rest/user/authentication-details', insecurity.isAuthorized())
 app.use('/rest/basket/:id', insecurity.isAuthorized())
