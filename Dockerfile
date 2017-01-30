@@ -6,7 +6,8 @@ LABEL version = "2.20.0"
 COPY . /juice-shop
 WORKDIR /juice-shop
 
+RUN npm install --global nodemon
 RUN npm install --production --unsafe-perm
 
 EXPOSE  3000
-CMD ["npm", "start"]
+CMD ["nodemon","-L", "start"]
